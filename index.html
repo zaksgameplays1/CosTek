@@ -1,0 +1,131 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... other head elements ... -->
+<!-- ... other head elements ... -->
+<!-- ... other head elements ... -->
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #333; /* Dark background color */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: #fff; /* Light text color */
+    }
+
+    .header {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0px;
+        margin-right: 150px;
+    }
+
+    #logo1 {
+        width: 150px; /* Set the width of your logo1 image */
+        margin-left: 150px;
+    }
+
+    .calculator {
+        background-color: #444; /* Darker calculator background color */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px; /* Reduced padding */
+        text-align: center;
+        margin-top: 20px; /* Add margin-top to create space above the calculator */
+        max-width: 400px; /* Set a maximum width for the calculator */
+        width: 100%; /* Ensure the calculator takes full width within its container */
+    }
+
+    h1 {
+        color: #5d9d5d; /* Dark green for the header */
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+        color: #ccc; /* Light gray for labels */
+    }
+
+    input {
+        width: calc(100% - 20px); /* Adjusted width for input fields */
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #555; /* Darker border color */
+        border-radius: 4px;
+        color: #333; /* Dark text color for input */
+        background-color: #666; /* Darker input background color */
+    }
+
+    button {
+        background: url('images/calculate.gif') center center no-repeat; /* Set the background image */
+        background-size: 200px; /* Constrain the background image to the button size */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #006400; /* Dark green button background color */
+    }
+
+    input::placeholder {
+    color: #aaaaaa; /* Replace with your desired color code */
+}
+    button:hover {
+        background-color: #004d00; /* Darker green on hover */
+    }
+
+    #totalEarnings {
+        font-size: 18px;
+        color: #009688; /* Teal color for total earnings */
+        margin-top: 20px;
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="header">
+        <img id="logo1" src="images/logo1.png" alt="Logo1">
+    </div>
+
+    <div class="calculator">
+        <h1>Cos384 Profit Calculator</h1>
+
+        <label for="initialAssets">Initial Assets:</label>
+        <input type="text" id="initialAssets" />
+
+        <label for="dailyGrowth">Daily Growth Percentage:</label>
+        <!-- Use placeholder attribute to display default text -->
+        <input type="text" id="dailyGrowth" placeholder="VIP 1 Default: ≈ 2.567%" />
+
+        <label for="numDays">Number of Days:</label>
+        <input type="text" id="numDays" />
+
+        <button id="calculateButton">Calculate Earnings</button>
+        
+        <p id="totalEarnings">Total Earnings: </p>
+        <p id="earnedAmount">Earned Amount: </p>
+    </div>
+    
+
+    <script src="renderer.js"></script>
+    <script>
+        // Set default value for the dailyGrowth input when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            var dailyGrowthInput = document.getElementById('dailyGrowth');
+
+            // Remove the placeholder once the user starts typing
+            dailyGrowthInput.addEventListener('input', function () {
+                dailyGrowthInput.placeholder = '';
+            });
+        });
+    </script>
+</body>
+</html>
