@@ -1,16 +1,32 @@
 {
-  "name": "javascript",
+  "name": "my-app",
+  "productName": "my-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "calc.js",
+  "description": "My Electron application description",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "zaksgameplays1",
+    "email": "elfandotheranimatedthing@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
-    "electron": "^27.1.0",
-    "readline-sync": "^1.4.10"
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.0.0",
+    "@electron-forge/maker-deb": "^7.0.0",
+    "@electron-forge/maker-rpm": "^7.0.0",
+    "@electron-forge/maker-squirrel": "^7.0.0",
+    "@electron-forge/maker-zip": "^7.0.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.0.0",
+    "electron": "^27.1.0"
   }
 }
