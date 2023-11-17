@@ -27,7 +27,7 @@ function calculateEarnings() {
     let dailyGrowthPercentage = document.getElementById('dailyGrowth').value.trim();
 
     if (dailyGrowthPercentage === '') {
-        dailyGrowthPercentage = 0.02567048550700850211732265371106;
+        dailyGrowthPercentage = 0.0254;
     } else {
         dailyGrowthPercentage = parseFloat(dailyGrowthPercentage.replace('%', '')) / 100;
     }
@@ -38,8 +38,8 @@ function calculateEarnings() {
         const totalEarnings = (initialAssets * Math.pow((1 + dailyGrowthPercentage), numDays)).toFixed(2);
         const earnedAmount = (totalEarnings - initialAssets).toFixed(2);
 
-        document.getElementById('totalEarnings').innerText = `Total Earnings: ${totalEarnings}`;
-        document.getElementById('earnedAmount').innerText = `Earned Amount: ${earnedAmount}`;
+        document.getElementById('totalEarnings').innerText = `Total Earnings: $${totalEarnings} USDT`;
+        document.getElementById('earnedAmount').innerText = `Earned Amount: $${earnedAmount} USDT`;
 
         // Calculate and display how much more has been earned from the initial assets
         const moreEarned = (totalEarnings - initialAssets).toFixed(2);
